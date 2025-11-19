@@ -11,7 +11,7 @@ namespace SimCorp.Sample.Solution.Strategy
         /// Gets the <see cref="TriangleType"/> for the strategy
         /// </summary>
         TriangleType TriangleType { get; }
-       
+
         /// <summary>
         /// Detects if the strategy is a match
         /// </summary>

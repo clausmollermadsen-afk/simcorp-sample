@@ -21,7 +21,7 @@ namespace SimCorp.Sample.Solution.Strategy
         /// <exception cref="NotSupportedException">Throws <see cref="NotSupportedException"/> if <see cref="TriangleType" is not found/></exception>
         public TriangleType FindTriangleType(TriangleSides side)
         {
-            var strategy = _strategies.SingleOrDefault(s => s.Match(side)) 
+            var strategy = _strategies.SingleOrDefault(s => s.Match(side))
                 ?? throw new NotSupportedException("Unable to detect a matching triangle strategy for the given side.");
 
             return strategy.TriangleType;

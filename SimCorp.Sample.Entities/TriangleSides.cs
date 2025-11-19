@@ -37,7 +37,7 @@ namespace SimCorp.Sample.Entities
         /// Gets the length if SideB
         /// </summary>
         public double SideB { get; init; }
-        
+
         /// <summary>
         /// Gets the length of SideC
         /// </summary>
@@ -84,7 +84,7 @@ namespace SimCorp.Sample.Entities
             {
                 return false;
             }
-            
+
             triangleSides = new TriangleSides(sideA, sideB, sideC);
             return true;
 

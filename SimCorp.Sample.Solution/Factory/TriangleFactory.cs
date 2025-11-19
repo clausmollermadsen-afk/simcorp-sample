@@ -23,7 +23,7 @@ namespace SimCorp.Sample.Solution.Factory
         /// <exception cref="NotSupportedException">Throws <see cref="NotSupportedException"/> if triangle type could not be identified</exception>
         public ITriangle Create(TriangleSides sides)
         {
-            var triangleType =  _triangleDetector.FindTriangleType(sides);
+            var triangleType = _triangleDetector.FindTriangleType(sides);
             return triangleType switch
             {
                 TriangleType.Equilateral => new EquilateralTriangle(sides),

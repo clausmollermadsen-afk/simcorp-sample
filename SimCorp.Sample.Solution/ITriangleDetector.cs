@@ -15,6 +15,6 @@ namespace SimCorp.Sample.Solution
         /// </summary>
         /// <param name="sides">Sides of the triangle</param>
         /// <returns>The TriangleType</returns>
-        public TriangleType FindTriangleType(TriangleSides sides);
+        TriangleType FindTriangleType(TriangleSides sides);
     }
 }

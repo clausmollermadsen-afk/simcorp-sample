@@ -7,7 +7,7 @@ namespace SimCorp.Sample.Solution
 {
     internal class Program
     {
-        static void Main()
+        private static void Main()
         {
 
             // We could use an IoC container here
