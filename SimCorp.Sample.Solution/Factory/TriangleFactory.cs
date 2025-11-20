@@ -1,4 +1,5 @@
 ﻿using SimCorp.Sample.Entities;
+using SimCorp.Sample.Solution;
 
 namespace SimCorp.Sample.Solution.Factory
 {
