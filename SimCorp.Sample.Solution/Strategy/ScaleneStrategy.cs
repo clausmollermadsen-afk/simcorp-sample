@@ -1,4 +1,5 @@
 ﻿using SimCorp.Sample.Entities;
+using SimCorp.Sample.Entities.Extensions;
 
 namespace SimCorp.Sample.Solution.Strategy
 {
@@ -14,8 +15,6 @@ namespace SimCorp.Sample.Solution.Strategy
 
         /// <inheritdoc/>
         public bool Match(TriangleSides sides)
-        {
-            return sides.SideA != sides.SideB && sides.SideB != sides.SideC && sides.SideA != sides.SideC;
-        }
+            => sides.IsScalene();
     }
 }

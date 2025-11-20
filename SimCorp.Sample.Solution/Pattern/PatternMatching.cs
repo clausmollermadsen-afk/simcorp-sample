@@ -1,4 +1,5 @@
 ﻿using SimCorp.Sample.Entities;
+using SimCorp.Sample.Entities.Extensions;
 
 namespace SimCorp.Sample.Solution.Pattern
 {
@@ -12,9 +13,9 @@ namespace SimCorp.Sample.Solution.Pattern
         {
             return sides switch
             {
-                TriangleSides when sides.SideA == sides.SideB && sides.SideB == sides.SideC => TriangleType.Equilateral,
-                TriangleSides when sides.SideA == sides.SideB || sides.SideB == sides.SideC || sides.SideA == sides.SideC => TriangleType.Isosceles,
-                TriangleSides when sides.SideA != sides.SideB && sides.SideB != sides.SideC && sides.SideA != sides.SideC => TriangleType.Scalene,
+                TriangleSides when sides.IsEquilateral() => TriangleType.Equilateral,
+                TriangleSides when sides.IsIsosceles() => TriangleType.Isosceles,
+                TriangleSides when sides.IsScalene() => TriangleType.Scalene,
                 _ => throw new ArgumentException("No TriangleTypes could be dectected")
             };
         }

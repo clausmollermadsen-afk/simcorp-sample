@@ -1,4 +1,6 @@
-﻿namespace SimCorp.Sample.Entities
+﻿using SimCorp.Sample.Entities.Extensions;
+
+namespace SimCorp.Sample.Entities
 {
     /// <summary>
     /// Implementation of <see cref="TriangleBase"/> for a Equilateral Triangle, <see cref="TriangleType.Equilateral"/>/>
@@ -13,6 +15,10 @@
         /// <param name="side">The triangle sides <see cref="TriangleSides"/></param>
         public EquilateralTriangle(TriangleSides side) : this(TriangleType.Equilateral, side)
         {
+            if (!side.IsEquilateral())
+            {
+                throw new ArgumentException("Triangle is not Scalene");
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SimCorp.Sample.Entities;
+using SimCorp.Sample.Entities.Extensions;
 
 namespace SimCorp.Sample.Solution.Strategy
 {
@@ -11,7 +12,7 @@ namespace SimCorp.Sample.Solution.Strategy
         public TriangleType TriangleType => TriangleType.Isosceles;
 
         /// <inheritdoc/>
-        public bool Match(TriangleSides sides) => (sides.SideA == sides.SideB || sides.SideB == sides.SideC || sides.SideA == sides.SideC)
-                && !(sides.SideA == sides.SideB && sides.SideB == sides.SideC);
+        public bool Match(TriangleSides sides)
+            => sides.IsIsosceles();
     }
 }

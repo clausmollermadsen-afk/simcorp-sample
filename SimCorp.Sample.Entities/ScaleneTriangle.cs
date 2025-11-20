@@ -1,4 +1,6 @@
-﻿namespace SimCorp.Sample.Entities
+﻿using SimCorp.Sample.Entities.Extensions;
+
+namespace SimCorp.Sample.Entities
 {
     /// <summary>
     /// Implementation of <see cref="TriangleBase"/> for a Scalene Triangle, <see cref="TriangleType.Scalene"/>/>
@@ -14,6 +16,10 @@
         /// <param name="side">The triangle sides <see cref="TriangleSides"/></param>
         public ScaleneTriangle(TriangleSides side) : this(TriangleType.Scalene, side)
         {
+            if (!side.IsScalene())
+            {
+                throw new ArgumentException("Triangle is not Scalene");
+            }
         }
     }
 }

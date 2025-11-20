@@ -1,4 +1,6 @@
-﻿namespace SimCorp.Sample.Entities
+﻿using SimCorp.Sample.Entities.Extensions;
+
+namespace SimCorp.Sample.Entities
 {
 
     /// <summary>
@@ -14,6 +16,10 @@
         /// <param name="side">The triangle sides <see cref="TriangleSides"/></param>
         public IsoscelesTriangle(TriangleSides side) : this(TriangleType.Isosceles, side)
         {
+            if (!side.IsIsosceles())
+            {
+                throw new ArgumentException("Triangle is not Isosceles");
+            }
         }
     }
 }
