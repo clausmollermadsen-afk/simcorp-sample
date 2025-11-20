@@ -6,8 +6,8 @@ namespace SimCorp.Sample.Entities
     /// Implementation of <see cref="TriangleBase"/> for a Equilateral Triangle, <see cref="TriangleType.Equilateral"/>/>
     /// </summary>
     /// <param name="TriangleType">The triangle type, <see cref="TriangleType"/></param>
-    /// <param name="Sides'">The triangle sides <see cref="TriangleSides"/></param>
-    public record EquilateralTriangle(TriangleType TriangleType, TriangleSides Sides) : TriangleBase(TriangleType, Sides)
+    /// <param name="Side'">The triangle sides <see cref="TriangleSides"/></param>
+    public record EquilateralTriangle(TriangleType TriangleType, TriangleSides Side) : TriangleBase(TriangleType, Side)
     {
         /// <summary>
         /// Creates an instance of <see cref="EquilateralTriangle"/>
@@ -17,7 +17,7 @@ namespace SimCorp.Sample.Entities
         {
             if (!side.IsEquilateral())
             {
-                throw new ArgumentException("Triangle is not Scalene");
+                throw new ArgumentException("Triangle is not Equilateral");
             }
         }
     }

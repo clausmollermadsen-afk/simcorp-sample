@@ -7,7 +7,7 @@ namespace SimCorp.Sample.Entities
     /// Implementation of <see cref="TriangleBase"/> for a Isosceles Triangle, <see cref="TriangleType.Isosceles"/>/>
     /// </summary>
     /// <param name="TriangleType">The triangle type, <see cref="TriangleType"/></param>
-    /// <param name="sides'">The triangle sides <see cref="TriangleSides"/></param>
+    /// <param name="Side'">The triangle sides <see cref="TriangleSides"/></param>
     public record IsoscelesTriangle(TriangleType TriangleType, TriangleSides Side) : TriangleBase(TriangleType, Side)
     {
         /// <summary>
