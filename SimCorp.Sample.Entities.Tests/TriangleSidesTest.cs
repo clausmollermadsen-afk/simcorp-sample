@@ -1,4 +1,6 @@
-﻿namespace SimCorp.Sample.Entities.Tests
+﻿using SimCorp.Sample.Entities.Extensions;
+
+namespace SimCorp.Sample.Entities.Tests
 {
     public class TriangleSidesTest
     {
@@ -31,6 +33,45 @@
             {
                 Assert.That(TriangleSides.TryCreate(sideA, sideB, sideC, out var triangleSides, out var errorMessage), Is.False);
                 Assert.That(errorMessage, Is.Not.Null);
+            }
+        }
+
+
+        [TestCase(1, 2, 3, true)]
+        [TestCase(1, 1, 2, false)]
+        [TestCase(1, 2, 1, false)]
+        [TestCase(2, 1, 1, false)]
+        public void VerifyIsIsScalene(double sideA, double sideB, double sideC, bool expected)
+        {
+            if (TriangleSides.TryCreate(sideA, sideB, sideC, out var sides, out var _))
+            {
+                Assert.That(sides.IsScalene(), Is.EqualTo(expected));
+            }
+        }
+
+        [TestCase(1, 1, 2, true)]
+        [TestCase(1, 2, 1, true)]
+        [TestCase(2, 1, 1, true)]
+        [TestCase(1, 1, 1, false)]
+        [TestCase(1, 2, 3, false)]
+        public void VerifyIsIsosceles(double sideA, double sideB, double sideC, bool expected)
+        {
+            if (TriangleSides.TryCreate(sideA, sideB, sideC, out var sides, out var _))
+            {
+                Assert.That(sides.IsIsosceles(), Is.EqualTo(expected));
+            }
+        }
+
+        [TestCase(1, 1, 2, false)]
+        [TestCase(1, 2, 1, false)]
+        [TestCase(2, 1, 1, false)]
+        [TestCase(1, 1, 1, true)]
+        [TestCase(1, 2, 3, false)]
+        public void VerifyIsEquilateral(double sideA, double sideB, double sideC, bool expected)
+        {
+            if (TriangleSides.TryCreate(sideA, sideB, sideC, out var sides, out var _))
+            {
+                Assert.That(sides.IsEquilateral(), Is.EqualTo(expected));
             }
         }
     }
