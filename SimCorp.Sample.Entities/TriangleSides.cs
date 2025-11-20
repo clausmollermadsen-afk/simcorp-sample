@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using SimCorp.Sample.Entities.Extensions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SimCorp.Sample.Entities
 {
@@ -80,25 +81,13 @@ namespace SimCorp.Sample.Entities
                 return false;
             }
 
-            if (!EnsureGreaterThanZero(sideC, nameof(sideC), out errorMessage))
+            if (!sideC.EnsureGreaterThanZero(nameof(sideC), out errorMessage))
             {
                 return false;
             }
 
             triangleSides = new TriangleSides(sideA, sideB, sideC);
             return true;
-
-            static bool EnsureGreaterThanZero(double value, string name, [NotNullWhen(false)] out string? errorMessage)
-            {
-                errorMessage = null;
-                if (value <= 0 || double.IsNaN(value))
-                {
-                    errorMessage = $"{name}: {value} is less or equal to zero or is Nan";
-                    return false;
-                }
-
-                return true;
-            }
         }
     }
 }
