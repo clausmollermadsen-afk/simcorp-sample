@@ -71,12 +71,12 @@ namespace SimCorp.Sample.Entities
         public static bool TryCreate(double sideA, double sideB, double sideC, [NotNullWhen(true)] out TriangleSides? triangleSides, [NotNullWhen(false)] out string? errorMessage)
         {
             triangleSides = null;
-            if (!EnsureGreaterThanZero(sideA, nameof(sideA), out errorMessage))
+            if (!sideA.EnsureGreaterThanZero(nameof(sideA), out errorMessage))
             {
                 return false;
             }
 
-            if (!EnsureGreaterThanZero(sideB, nameof(sideB), out errorMessage))
+            if (!sideB.EnsureGreaterThanZero(nameof(sideB), out errorMessage))
             {
                 return false;
             }
