@@ -1,6 +1,4 @@
-﻿using SimCorp.Sample.Entities;
-
-namespace SimCorp.Sample.Solution.Factory
+﻿namespace SimCorp.Sample.Entities
 {
 
     /// <summary>
@@ -14,7 +12,7 @@ namespace SimCorp.Sample.Solution.Factory
         /// Creates an instance of <see cref="IsoscelesTriangle"/>
         /// </summary>
         /// <param name="side">The triangle sides <see cref="TriangleSides"/></param>
-        internal IsoscelesTriangle(TriangleSides side) : this(TriangleType.Isosceles, side)
+        public IsoscelesTriangle(TriangleSides side) : this(TriangleType.Isosceles, side)
         {
         }
     }

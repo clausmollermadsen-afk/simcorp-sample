@@ -1,6 +1,4 @@
-﻿using SimCorp.Sample.Entities;
-
-namespace SimCorp.Sample.Solution.Factory
+﻿namespace SimCorp.Sample.Entities
 {
     /// <summary>
     /// Implementation of <see cref="TriangleBase"/> for a Equilateral Triangle, <see cref="TriangleType.Equilateral"/>/>
@@ -13,7 +11,7 @@ namespace SimCorp.Sample.Solution.Factory
         /// Creates an instance of <see cref="EquilateralTriangle"/>
         /// </summary>
         /// <param name="side">The triangle sides <see cref="TriangleSides"/></param>
-        internal EquilateralTriangle(TriangleSides side) : this(TriangleType.Equilateral, side)
+        public EquilateralTriangle(TriangleSides side) : this(TriangleType.Equilateral, side)
         {
         }
     }

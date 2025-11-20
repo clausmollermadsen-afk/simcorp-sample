@@ -1,6 +1,4 @@
-﻿using SimCorp.Sample.Entities;
-
-namespace SimCorp.Sample.Solution.Factory
+﻿namespace SimCorp.Sample.Entities
 {
     /// <summary>
     /// Implementation of <see cref="TriangleBase"/> for a Scalene Triangle, <see cref="TriangleType.Scalene"/>/>
@@ -14,7 +12,7 @@ namespace SimCorp.Sample.Solution.Factory
         /// Creates an instance of <see cref="ScaleneTriangle"/>
         /// </summary>
         /// <param name="side">The triangle sides <see cref="TriangleSides"/></param>
-        internal ScaleneTriangle(TriangleSides side) : this(TriangleType.Scalene, side)
+        public ScaleneTriangle(TriangleSides side) : this(TriangleType.Scalene, side)
         {
         }
     }
